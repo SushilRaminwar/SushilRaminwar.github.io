@@ -31,12 +31,12 @@
             var div = document.createElement("div");
                 div.innerHTML = data[num].firstName;
                 mainContainer.appendChild(div);
-            
+                window.open('http://google.com/search?q='+q);          
         }
 
         //var q = "Testing google search";
 document.getElementById('search').onclick = function() {
-    window.open('http://google.com/search?q='+q);
+    //window.open('http://google.com/search?q='+q);
 };
 
 		}
