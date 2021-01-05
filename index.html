@@ -11,7 +11,7 @@
     <div id="myData"></div>
     <script>
         function welcome() {   
-var num = Math.floor(Math.random() *  (3 - 1) + 1);
+//var num = Math.floor(Math.random() *  (3 - 1) + 1);
 		fetch('people.json')
             .then(function (response) {
                 return response.json();
@@ -25,6 +25,8 @@ var num = Math.floor(Math.random() *  (3 - 1) + 1);
         function appendData(data) {
             var mainContainer = document.getElementById("myData");
             
+            var count = Object.keys(data).length;
+            var num = Math.floor(Math.random() *  (count) + 1);
                 var div = document.createElement("div");
                 div.innerHTML = data[num].firstName;
                 mainContainer.appendChild(div);
