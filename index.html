@@ -32,9 +32,16 @@
                 mainContainer.appendChild(div);
             
         }
+
+        var q = "Testing google search";
+document.getElementById('search').onclick = function() {
+    window.open('http://google.com/search?q='+q);
+};
+
 		}
     </script>
 	
 <button onclick="welcome()"> redirect num 1 </button>   
+<button id="search">Search</button>
 </body>
 </html>
