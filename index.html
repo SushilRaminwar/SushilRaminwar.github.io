@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +10,9 @@
 <body>
     <div id="myData"></div>
     <script>
-        fetch('people.json')
+        function welcome() {   
+var num = Math.floor(Math.random() *  (3 - 1) + 1);
+		fetch('people.json')
             .then(function (response) {
                 return response.json();
             })
@@ -21,12 +24,15 @@
             });
         function appendData(data) {
             var mainContainer = document.getElementById("myData");
-            for (var i = 0; i < data.length; i++) {
+            
                 var div = document.createElement("div");
-                div.innerHTML = 'Name: ' + data[i].firstName + ' ' + data[i].lastName;
+                div.innerHTML = data[num];
                 mainContainer.appendChild(div);
-            }
+            
         }
+		}
     </script>
+	
+<button onclick="welcome()"> redirect num 1 </button>   
 </body>
 </html>
