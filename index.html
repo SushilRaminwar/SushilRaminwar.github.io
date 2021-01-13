@@ -42,9 +42,10 @@
             var num = Math.floor(Math.random() *  (count) + 1);
             var q = data[num].firstName;
             var div = document.createElement("div");
-                div.innerHTML = data[num].firstName;
+            window.open('https://twitter.com/'+q);          
+            div.innerHTML = data[num].firstName;
                 mainContainer.appendChild(div);
-                window.open('https://twitter.com/'+q);          
+                //window.open('https://twitter.com/'+q);          
         }
 
         //var q = "Testing google search";
