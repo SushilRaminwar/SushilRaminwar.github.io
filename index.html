@@ -2,62 +2,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Random</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Random</title>
 </head>
 <body>
-    <button onclick="welcome()" class="btn"> Random </button>   
- <style>
+<button onclick="welcome()" class="btn"> Random </button>   
+<style>
 
-    .btn {
-        display:block;
-        height: 300px;
-        width: 300px;
-        border-radius: 50%;
-        border: 1px solid red;
-        
-      }
-      </style>
+.btn {
+display:block;
+height: 300px;
+width: 300px;
+border-radius: 50%;
+border: 1px solid red;
+
+}
+</style>
 
 
-    <div id="myData"></div>
- 
+<div id="myData"></div>
+
 <script>
-        function welcome() {   
+function welcome() {   
 //var num = Math.floor(Math.random() *  (3 - 1) + 1);
-		fetch('people.json')
-            .then(function (response) {
-                return response.json();
-            })
-            .then(function (data) {
-                appendData(data);
-            })
-            .catch(function (err) {
-                console.log('error: ' + err);
-            });
-        function appendData(data) {
-            var mainContainer = document.getElementById("myData");
-            
-            var count = Object.keys(data).length;
-            var num = Math.floor(Math.random() *  (count) + 1);
-            var q = data[num].firstName;
-            var div = document.createElement("div");
-            window.open('https://twitter.com/'+q);          
-            div.innerHTML = data[num].firstName;
-                mainContainer.appendChild(div);
-                //window.open('https://twitter.com/'+q);          
-        }
 
-        //var q = "Testing google search";
+var xxx = Math.floor(Math.random() * 2);
+
+if (xxx == 0) {
+    fetch('people.json')
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (data) {
+        appendData(data);
+    })
+    .catch(function (err) {
+        console.log('error: ' + err);
+    });
+}else if (xxx == 1) {
+    fetch('ig.json')
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (data) {
+        appendData1(data);
+    })
+    .catch(function (err) {
+        console.log('error: ' + err);
+    });
+} 
+
+
+function appendData(data) {
+    var mainContainer = document.getElementById("myData");
+    
+    var count = Object.keys(data).length;
+    var num = Math.floor(Math.random() *  (count) + 1);
+    var q = data[num].firstName;
+    var div = document.createElement("div");
+    window.open('https://twitter.com/'+q);          
+    div.innerHTML = data[num].firstName;
+        mainContainer.appendChild(div);
+        
+}
+
+function appendData1(data) {
+    var mainContainer = document.getElementById("myData");
+    
+    var count = Object.keys(data).length;
+    var num = Math.floor(Math.random() *  (count) + 1);
+    var q = data[num].firstName;
+    var div = document.createElement("div");
+    window.open('https://instagram.com/'+q);          
+    div.innerHTML = data[num].firstName;
+        mainContainer.appendChild(div);
+        
+}
+//var q = "Testing google search";
 document.getElementById('search').onclick = function() {
-    //window.open('http://google.com/search?q='+q);
+//window.open('http://google.com/search?q='+q);
 };
 
-		}
-    </script>
-	
+}
+</script>
+
 
 
 </body>
