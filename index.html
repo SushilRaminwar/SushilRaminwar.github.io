@@ -28,9 +28,9 @@ border: 1px solid red;
 function welcome() {   
 //var num = Math.floor(Math.random() *  (3 - 1) + 1);
 
-var xxx = Math.floor(Math.random() * 2);
+var xxx = Math.floor(Math.random() * 1);
 
-if (xxx == 0) {
+if (xxx == 1) {
     fetch('people.json')
     .then(function (response) {
         return response.json();
@@ -41,7 +41,7 @@ if (xxx == 0) {
     .catch(function (err) {
         console.log('error: ' + err);
     });
-}else if (xxx == 1) {
+}else if (xxx == 0) {
     fetch('ig.json')
     .then(function (response) {
         return response.json();
