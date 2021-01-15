@@ -72,7 +72,7 @@ function appendData1(data) {
     var mainContainer = document.getElementById("myData");
     
     var count = Object.keys(data).length;
-    var num = Math.floor(Math.random() *  (count) + 1);
+    var num = Math.floor(Math.random() *  count);
     var q = data[num].firstName;
     var div = document.createElement("div");
     window.open('https://instagram.com/'+q);          
